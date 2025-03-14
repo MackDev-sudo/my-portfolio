@@ -145,7 +145,7 @@ const Projects = () => {
 
   return (
     <div className="pt-16">
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -166,39 +166,50 @@ const Projects = () => {
                   initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-tertiary rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                  className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
                 >
                   <div className="flex flex-col md:flex-row items-center">
                     <div className="md:w-auto p-4 relative">
-                      <div className="w-36 h-36 relative rounded-lg overflow-hidden bg-primary/10">
+                      <div className="w-36 h-36 relative rounded-lg overflow-hidden bg-theme-bg-tertiary-light dark:bg-theme-bg-tertiary-dark">
                         <img
                           src={project.image}
                           alt={project.title}
                           className="w-full h-full object-contain p-2"
                         />
-                        <div className="absolute top-2 right-2 bg-primary/80 p-1.5 rounded-full backdrop-blur-sm">
-                          <project.icon className="h-4 w-4 text-secondary" />
+                        <div className="absolute top-2 right-2 p-1.5 rounded-full bg-gray-200/80 dark:bg-gray-700/80">
+                          <project.icon className="h-4 w-4 text-theme-text-secondary-light dark:text-theme-text-secondary-dark" />
                         </div>
                       </div>
                     </div>
                     <div className="flex-1 p-6 md:p-8 flex flex-col justify-between">
                       <div>
                         <div className="flex items-center justify-between mb-4">
-                          <h3 className="text-2xl font-bold text-textPrimary">
+                          <h3 className="text-2xl font-bold text-theme-text-secondary-light dark:text-theme-text-secondary-dark">
                             {project.title}
                           </h3>
-                          <span className="px-3 py-1 bg-primary text-secondary rounded-full text-sm font-medium">
+                          <span
+                            className={`px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1.5 ${
+                              project.category === "Android"
+                                ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+                                : project.category === "Web"
+                                ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+                                : project.category === "Backend"
+                                ? "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400"
+                                : "bg-gray-100 text-gray-700 dark:bg-gray-800/30 dark:text-gray-400"
+                            }`}
+                          >
+                            <project.icon className="h-3.5 w-3.5" />
                             {project.category}
                           </span>
                         </div>
-                        <p className="text-textSecondary mb-6 leading-relaxed">
+                        <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mb-6 leading-relaxed">
                           {project.description}
                         </p>
                         <div className="flex flex-wrap gap-2 mb-6">
                           {project.technologies.map((tech) => (
                             <span
                               key={tech}
-                              className="px-3 py-1 bg-primary/80 text-textSecondary rounded-full text-sm backdrop-blur-sm"
+                              className="px-2.5 py-0.5 border rounded-full text-xs font-medium border-theme-secondary-light dark:border-theme-secondary-dark text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:border-theme-secondary-light/70 dark:hover:border-theme-secondary-dark/70 transition-colors duration-300"
                             >
                               {tech}
                             </span>
@@ -209,7 +220,7 @@ const Projects = () => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-secondary hover:text-opacity-80 transition-colors duration-300 group"
+                        className="inline-flex items-center text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-opacity-80 transition-colors duration-300 group"
                       >
                         View Project
                         <svg
@@ -237,7 +248,7 @@ const Projects = () => {
               <h2 className="heading text-center text-2xl mb-8">
                 Upcoming Projects
               </h2>
-              <p className="text-textSecondary text-center max-w-2xl mx-auto mb-12">
+              <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark text-center max-w-2xl mx-auto mb-12">
                 Exciting new projects currently in development, showcasing
                 innovation and cutting-edge technology.
               </p>
@@ -248,29 +259,30 @@ const Projects = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-tertiary/80 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 p-6"
+                    className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 p-6"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="bg-primary/80 p-2 rounded-lg">
-                        <project.icon className="h-6 w-6 text-secondary" />
+                      <div className="p-2 rounded-full bg-gray-200/80 dark:bg-gray-700/80">
+                        <project.icon className="h-6 w-6 text-theme-text-secondary-light dark:text-theme-text-secondary-dark" />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-4">
-                          <h3 className="text-xl font-bold text-textPrimary">
+                          <h3 className="text-xl font-bold text-theme-text-secondary-light dark:text-theme-text-secondary-dark">
                             {project.title}
                           </h3>
-                          <span className="px-3 py-1 bg-primary/60 text-secondary rounded-full text-sm font-medium">
+                          <span className="px-3 py-1 bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 rounded-full text-xs font-medium flex items-center gap-1.5">
+                            <project.icon className="h-3.5 w-3.5" />
                             {project.category}
                           </span>
                         </div>
-                        <p className="text-textSecondary mb-6 leading-relaxed">
+                        <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mb-6 leading-relaxed">
                           {project.description}
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {project.technologies.map((tech) => (
                             <span
                               key={tech}
-                              className="px-3 py-1 bg-primary/60 text-textSecondary rounded-full text-sm"
+                              className="px-2.5 py-0.5 border rounded-full text-xs font-medium border-theme-secondary-light dark:border-theme-secondary-dark text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:border-theme-secondary-light/70 dark:hover:border-theme-secondary-dark/70 transition-colors duration-300"
                             >
                               {tech}
                             </span>
@@ -287,7 +299,7 @@ const Projects = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-tertiary">
+      <section className="py-20 bg-theme-bg-tertiary-light dark:bg-theme-bg-tertiary-dark">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -297,7 +309,7 @@ const Projects = () => {
             className="max-w-3xl mx-auto"
           >
             <h2 className="heading mb-8">Have a Project in Mind?</h2>
-            <p className="text-textSecondary mb-8 text-lg">
+            <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mb-8 text-lg">
               Let's work together to bring your ideas to life. Contact me to
               discuss your project requirements.
             </p>

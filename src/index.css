@@ -8,7 +8,9 @@
   }
 
   body {
-    @apply bg-primary text-textPrimary;
+    @apply bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark 
+           text-theme-text-primary-light dark:text-theme-text-primary-dark 
+           transition-colors duration-300;
   }
 }
 
@@ -22,11 +24,13 @@
   }
 
   .heading {
-    @apply text-3xl sm:text-4xl font-bold mb-6;
+    @apply text-3xl sm:text-4xl font-bold mb-6 
+           text-theme-text-primary-light dark:text-theme-text-primary-dark;
   }
 
   .subheading {
-    @apply text-xl sm:text-2xl text-textSecondary mb-4;
+    @apply text-xl sm:text-2xl mb-4
+           text-theme-text-secondary-light dark:text-theme-text-secondary-dark;
   }
 
   .btn {
@@ -34,10 +38,36 @@
   }
 
   .btn-primary {
-    @apply bg-secondary text-primary hover:bg-opacity-80;
+    @apply bg-theme-secondary-light dark:bg-theme-secondary-dark 
+           text-white
+           hover:opacity-90;
   }
 
   .btn-outline {
-    @apply border-2 border-secondary text-secondary hover:bg-secondary hover:bg-opacity-10;
+    @apply border-2 
+           border-theme-secondary-light dark:border-theme-secondary-dark 
+           text-theme-secondary-light dark:text-theme-secondary-dark
+           hover:bg-theme-secondary-light/10 dark:hover:bg-theme-secondary-dark/10;
+  }
+
+  .card {
+    @apply bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark
+           rounded-lg shadow-lg p-6
+           border border-gray-200 dark:border-gray-700;
+  }
+
+  .nav-link {
+    @apply text-theme-text-secondary-light dark:text-theme-text-secondary-dark
+           hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark
+           transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-theme-secondary-light dark:text-theme-secondary-dark;
+  }
+
+  /* Add smooth transitions for all theme changes */
+  .theme-transition {
+    @apply transition-colors duration-300;
   }
 }

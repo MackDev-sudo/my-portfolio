@@ -5,6 +5,21 @@ import App from "./App";
 import "./index.css";
 import { logger } from "./utils/logger";
 
+// Initialize theme
+const initializeTheme = () => {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+};
+
+// Run theme initialization immediately
+initializeTheme();
+
 // Performance monitoring
 const startTime = performance.now();
 
@@ -30,15 +45,17 @@ class ErrorBoundary extends React.Component<
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-primary flex items-center justify-center">
+        <div className="min-h-screen bg-primary dark:bg-theme-primary-dark flex items-center justify-center">
           <div className="text-center p-8">
-            <h1 className="text-4xl font-bold text-secondary mb-4">Oops!</h1>
-            <p className="text-textSecondary mb-8">
+            <h1 className="text-4xl font-bold text-secondary dark:text-theme-secondary-dark mb-4">
+              Oops!
+            </h1>
+            <p className="text-textSecondary dark:text-theme-text-secondary-dark mb-8">
               Something went wrong. Please try refreshing the page.
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="btn btn-primary"
+              className="px-6 py-2 bg-secondary/20 dark:bg-theme-secondary-dark/20 text-secondary dark:text-theme-secondary-dark rounded-lg hover:bg-secondary/30 dark:hover:bg-theme-secondary-dark/30 transition-colors duration-200"
             >
               Refresh Page
             </button>

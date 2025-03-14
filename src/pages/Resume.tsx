@@ -4,6 +4,7 @@ import {
   CodeBracketIcon,
   SparklesIcon,
   ServerIcon,
+  ArrowDownTrayIcon,
 } from "@heroicons/react/24/outline";
 
 const Resume = () => {
@@ -103,32 +104,31 @@ const Resume = () => {
       },
     ],
   };
-  
+
   return (
     <div className="pt-16">
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex flex-col md:flex-row justify-between items-center mb-12">
+            <div className="flex justify-between items-center mb-12">
               <h1 className="heading">Resume</h1>
               <a
-                href="/projects/Atanu-Resume-Latest.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary inline-flex items-center mt-4 md:mt-0 hover:scale-105 transition-transform duration-300"
+                href="/resume.pdf"
+                download
+                className="bg-theme-secondary-light dark:bg-theme-secondary-dark text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors duration-300 flex items-center space-x-2"
               >
-                <DocumentArrowDownIcon className="w-5 h-5 mr-2" />
-                View Resume
+                <ArrowDownTrayIcon className="h-5 w-5" />
+                <span>Download PDF</span>
               </a>
             </div>
 
             {/* Why Hire Me Section */}
             <div className="mb-16">
-              <h2 className="text-2xl font-bold text-secondary mb-8 flex items-center">
+              <h2 className="text-2xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-8 flex items-center">
                 <SparklesIcon className="w-6 h-6 mr-2" />
                 Why Hire Me?
               </h2>
@@ -139,12 +139,12 @@ const Resume = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-tertiary p-6 rounded-lg hover:shadow-lg transition-shadow duration-300"
+                    className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark p-6 rounded-lg hover:shadow-lg transition-shadow duration-300"
                   >
-                    <h3 className="text-xl font-bold text-textPrimary mb-3">
+                    <h3 className="text-xl font-bold text-theme-text-primary-light dark:text-theme-text-primary-dark mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-textSecondary leading-relaxed">
+                    <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark leading-relaxed">
                       {item.description}
                     </p>
                   </motion.div>
@@ -154,7 +154,7 @@ const Resume = () => {
 
             {/* Skills Section */}
             <div>
-              <h2 className="text-2xl font-bold text-secondary mb-8 flex items-center">
+              <h2 className="text-2xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-8 flex items-center">
                 <CodeBracketIcon className="w-6 h-6 mr-2" />
                 Technical Expertise
               </h2>
@@ -166,7 +166,7 @@ const Resume = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <h3 className="text-xl font-bold text-textPrimary mb-6 capitalize flex items-center border-b border-tertiary pb-2">
+                    <h3 className="text-xl font-bold text-theme-text-primary-light dark:text-theme-text-primary-dark mb-6 capitalize flex items-center border-b border-theme-bg-tertiary-light dark:border-theme-bg-tertiary-dark pb-2">
                       {category === "storage" && (
                         <ServerIcon className="w-5 h-5 mr-2" />
                       )}
@@ -179,12 +179,12 @@ const Resume = () => {
                       {items.map((skill) => (
                         <div
                           key={skill.name}
-                          className="bg-tertiary/50 p-6 rounded-lg hover:bg-tertiary transition-colors duration-300"
+                          className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark p-6 rounded-lg hover:bg-theme-bg-tertiary-light dark:hover:bg-theme-bg-tertiary-dark transition-colors duration-300"
                         >
-                          <h4 className="text-lg font-semibold text-secondary mb-2">
+                          <h4 className="text-lg font-semibold text-theme-text-primary-light dark:text-theme-text-primary-dark mb-2">
                             {skill.name}
                           </h4>
-                          <p className="text-textSecondary leading-relaxed">
+                          <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark leading-relaxed">
                             {skill.description}
                           </p>
                         </div>
@@ -199,10 +199,10 @@ const Resume = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-tertiary">
+      <section className="py-20 bg-theme-bg-tertiary">
         <div className="container mx-auto px-4 text-center">
           <h2 className="heading mb-8">Ready to Work Together?</h2>
-          <p className="text-textSecondary mb-8 max-w-2xl mx-auto text-lg">
+          <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mb-8 max-w-2xl mx-auto text-lg">
             Looking for an experienced storage technologist and developer who
             can bring both infrastructure expertise and application development
             skills to your team? Let's connect and discuss how I can contribute

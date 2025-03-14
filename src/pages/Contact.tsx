@@ -80,7 +80,7 @@ const Contact = () => {
 
   return (
     <div className="pt-16">
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -88,7 +88,7 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="heading text-center mb-4">Get in Touch</h1>
-            <p className="text-textSecondary text-center max-w-2xl mx-auto mb-12">
+            <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark text-center max-w-2xl mx-auto mb-12">
               Whether you have a project in mind, want to explore collaboration
               opportunities, or simply wish to connect, I'm here to help turn
               your ideas into reality.
@@ -96,47 +96,47 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Contact Information */}
               <div className="space-y-8">
-                <h2 className="text-2xl font-bold text-secondary mb-6">
+                <h2 className="text-2xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-6">
                   Contact Information
                 </h2>
                 <div className="space-y-6">
                   {/* Primary Contact */}
-                  <div className="bg-tertiary/50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold text-textPrimary mb-4">
+                  <div className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark p-6 rounded-lg">
+                    <h3 className="text-xl font-semibold text-theme-text-primary-light dark:text-theme-text-primary-dark mb-4">
                       Primary Contact Methods
                     </h3>
                     <div className="space-y-4">
                       <div className="flex items-start space-x-3">
-                        <EnvelopeIcon className="h-6 w-6 text-secondary mt-1" />
+                        <EnvelopeIcon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark mt-1" />
                         <div>
-                          <h4 className="text-lg font-semibold text-textPrimary mb-1">
+                          <h4 className="text-lg font-semibold text-theme-text-primary-light dark:text-theme-text-primary-dark mb-1">
                             Email
                           </h4>
                           <a
                             href="mailto:mackdev1990@gmail.com"
-                            className="text-textSecondary hover:text-secondary transition-colors duration-300"
+                            className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transition-colors duration-300"
                           >
                             mackdev1990@gmail.com
                           </a>
-                          <p className="text-sm text-textSecondary mt-1">
+                          <p className="text-sm text-theme-text-secondary-light dark:text-theme-text-secondary-dark mt-1">
                             For project inquiries and collaborations
                           </p>
                         </div>
                       </div>
 
                       <div className="flex items-start space-x-3">
-                        <ClockIcon className="h-6 w-6 text-secondary mt-1" />
+                        <ClockIcon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark mt-1" />
                         <div>
-                          <h4 className="text-lg font-semibold text-textPrimary mb-1">
+                          <h4 className="text-lg font-semibold text-theme-text-primary-light dark:text-theme-text-primary-dark mb-1">
                             Availability
                           </h4>
-                          <p className="text-textSecondary">
+                          <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark">
                             Monday - Friday: 10 AM to 5 PM (IST)
                           </p>
-                          <p className="text-sm text-textSecondary mt-1">
+                          <p className="text-sm text-theme-text-secondary-light dark:text-theme-text-secondary-dark mt-1">
                             Response time: Within 24-48 hours
                           </p>
-                          <p className="text-sm text-textSecondary mt-1">
+                          <p className="text-sm text-theme-text-secondary-light dark:text-theme-text-secondary-dark mt-1">
                             Available for urgent consultations by appointment
                           </p>
                         </div>
@@ -145,28 +145,28 @@ const Contact = () => {
                   </div>
 
                   {/* Location & Availability */}
-                  <div className="bg-tertiary/50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold text-textPrimary mb-4">
+                  <div className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark p-6 rounded-lg">
+                    <h3 className="text-xl font-semibold text-theme-text-primary-light dark:text-theme-text-primary-dark mb-4">
                       Location & Work Preferences
                     </h3>
                     <div className="space-y-4">
                       <div className="flex items-start space-x-3">
-                        <MapPinIcon className="h-6 w-6 text-secondary mt-1" />
+                        <MapPinIcon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark mt-1" />
                         <div>
-                          <h4 className="text-lg font-semibold text-textPrimary mb-1">
+                          <h4 className="text-lg font-semibold text-theme-text-primary-light dark:text-theme-text-primary-dark mb-1">
                             Based In
                           </h4>
-                          <p className="text-textSecondary">
+                          <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark">
                             Kolkata, West Bengal, India
                           </p>
                           <div className="mt-2 space-y-1">
-                            <p className="text-sm text-textSecondary">
+                            <p className="text-sm text-theme-text-secondary-light dark:text-theme-text-secondary-dark">
                               • Available for remote work worldwide
                             </p>
-                            <p className="text-sm text-textSecondary">
+                            <p className="text-sm text-theme-text-secondary-light dark:text-theme-text-secondary-dark">
                               • Open to relocation for the right opportunity
                             </p>
-                            <p className="text-sm text-textSecondary">
+                            <p className="text-sm text-theme-text-secondary-light dark:text-theme-text-secondary-dark">
                               • Flexible scheduling across time zones
                             </p>
                           </div>
@@ -176,8 +176,8 @@ const Contact = () => {
                   </div>
 
                   {/* Connect With Me */}
-                  <div className="bg-tertiary/50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold text-textPrimary mb-4">
+                  <div className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark p-6 rounded-lg">
+                    <h3 className="text-xl font-semibold text-theme-text-primary-light dark:text-theme-text-primary-dark mb-4">
                       Connect With Me
                     </h3>
                     <div className="flex items-center space-x-6">
@@ -185,7 +185,7 @@ const Contact = () => {
                         href="https://www.linkedin.com/in/atanu-kumar-paul-57b0ba115/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-textSecondary hover:text-secondary transform hover:scale-110 transition-all duration-300"
+                        className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transform hover:scale-110 transition-all duration-300"
                         title="Connect on LinkedIn"
                       >
                         <svg
@@ -200,7 +200,7 @@ const Contact = () => {
                         href="https://github.com/yourusername"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-textSecondary hover:text-secondary transform hover:scale-110 transition-all duration-300"
+                        className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transform hover:scale-110 transition-all duration-300"
                         title="View GitHub Projects"
                       >
                         <svg
@@ -215,7 +215,7 @@ const Contact = () => {
                         href="https://twitter.com/yourusername"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-textSecondary hover:text-secondary transform hover:scale-110 transition-all duration-300"
+                        className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transform hover:scale-110 transition-all duration-300"
                         title="Follow on Twitter"
                       >
                         <svg
@@ -232,12 +232,12 @@ const Contact = () => {
               </div>
 
               {/* Contact Form */}
-              <div className="bg-tertiary p-8 rounded-lg">
+              <div className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark p-8 rounded-lg">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-textPrimary mb-2"
+                      className="block text-theme-text-primary-light dark:text-theme-text-primary-dark mb-2"
                     >
                       Name *
                     </label>
@@ -248,14 +248,14 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Enter your name"
-                      className="w-full px-4 py-2 bg-primary border border-textSecondary rounded-lg focus:outline-none focus:border-secondary text-textPrimary"
+                      className="w-full px-4 py-2 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark border border-theme-text-secondary-light dark:border-theme-text-secondary-dark rounded-lg focus:outline-none focus:border-theme-secondary-light dark:focus:border-theme-secondary-dark text-theme-text-primary-light dark:text-theme-text-primary-dark"
                       required
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-textPrimary mb-2"
+                      className="block text-theme-text-primary-light dark:text-theme-text-primary-dark mb-2"
                     >
                       Email *
                     </label>
@@ -266,14 +266,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Enter your email address"
-                      className="w-full px-4 py-2 bg-primary border border-textSecondary rounded-lg focus:outline-none focus:border-secondary text-textPrimary"
+                      className="w-full px-4 py-2 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark border border-theme-text-secondary-light dark:border-theme-text-secondary-dark rounded-lg focus:outline-none focus:border-theme-secondary-light dark:focus:border-theme-secondary-dark text-theme-text-primary-light dark:text-theme-text-primary-dark"
                       required
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-textPrimary mb-2"
+                      className="block text-theme-text-primary-light dark:text-theme-text-primary-dark mb-2"
                     >
                       Subject *
                     </label>
@@ -284,14 +284,14 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="What is your message about?"
-                      className="w-full px-4 py-2 bg-primary border border-textSecondary rounded-lg focus:outline-none focus:border-secondary text-textPrimary"
+                      className="w-full px-4 py-2 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark border border-theme-text-secondary-light dark:border-theme-text-secondary-dark rounded-lg focus:outline-none focus:border-theme-secondary-light dark:focus:border-theme-secondary-dark text-theme-text-primary-light dark:text-theme-text-primary-dark"
                       required
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-textPrimary mb-2"
+                      className="block text-theme-text-primary-light dark:text-theme-text-primary-dark mb-2"
                     >
                       Message *
                     </label>
@@ -302,7 +302,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="Write your message here..."
                       rows={4}
-                      className="w-full px-4 py-2 bg-primary border border-textSecondary rounded-lg focus:outline-none focus:border-secondary text-textPrimary"
+                      className="w-full px-4 py-2 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark border border-theme-text-secondary-light dark:border-theme-text-secondary-dark rounded-lg focus:outline-none focus:border-theme-secondary-light dark:focus:border-theme-secondary-dark text-theme-text-primary-light dark:text-theme-text-primary-dark"
                       required
                     />
                   </div>
@@ -311,8 +311,8 @@ const Contact = () => {
                     <div
                       className={`p-4 rounded-lg ${
                         submitStatus.type === "success"
-                          ? "bg-green-100 text-green-700"
-                          : "bg-red-100 text-red-700"
+                          ? "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-100"
+                          : "bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-100"
                       }`}
                     >
                       {submitStatus.message}
@@ -332,25 +332,25 @@ const Contact = () => {
                       />
                       <label
                         htmlFor="consent"
-                        className="text-sm text-textSecondary"
+                        className="text-sm text-theme-text-secondary-light dark:text-theme-text-secondary-dark"
                       >
                         I consent to processing of my personal data entered
                         above for Mackdev Inc to contact me. *
                       </label>
                     </div>
-                    <p className="text-xs text-textSecondary/80">
+                    <p className="text-xs text-theme-text-secondary-light/80 dark:text-theme-text-secondary-dark/80">
                       For further details on how your personal data will be
                       processed and how your consent can be managed, refer to
                       the{" "}
                       <a
                         href="/privacy"
-                        className="text-secondary hover:text-secondary/80 underline transition-colors duration-300"
+                        className="text-theme-secondary-light dark:text-theme-secondary-dark hover:text-theme-secondary-light/80 dark:hover:text-theme-secondary-dark/80 underline transition-colors duration-300"
                       >
                         Mackdev Inc Privacy Notice
                       </a>
                       .
                     </p>
-                    <p className="text-xs text-textSecondary/80">
+                    <p className="text-xs text-theme-text-secondary-light/80 dark:text-theme-text-secondary-dark/80">
                       * Mandatory fields
                     </p>
                   </div>
@@ -358,8 +358,8 @@ const Contact = () => {
                     type="submit"
                     className={`btn w-full ${
                       formData.consent && !isSubmitting
-                        ? "btn-primary hover:bg-secondary/90"
-                        : "bg-gray-500 cursor-not-allowed"
+                        ? "btn-primary hover:bg-theme-secondary-light/90 dark:hover:bg-theme-secondary-dark/90"
+                        : "bg-gray-500 dark:bg-gray-600 cursor-not-allowed"
                     } transition-colors duration-300`}
                     disabled={!formData.consent || isSubmitting}
                   >
@@ -371,17 +371,17 @@ const Contact = () => {
 
             {/* Additional Information - Full Width */}
             <div className="mt-12">
-              <div className="bg-tertiary/50 p-8 rounded-lg">
-                <h3 className="text-xl font-semibold text-textPrimary mb-6">
+              <div className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark p-8 rounded-lg">
+                <h3 className="text-xl font-semibold text-theme-text-primary-light dark:text-theme-text-primary-dark mb-6">
                   Additional Information
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-6">
                     <div>
-                      <h4 className="text-lg font-semibold text-secondary mb-3">
+                      <h4 className="text-lg font-semibold text-theme-secondary-light dark:text-theme-secondary-dark mb-3">
                         Freelance & Consulting Services
                       </h4>
-                      <p className="text-textSecondary leading-relaxed">
+                      <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark leading-relaxed">
                         Available for freelance projects and consulting
                         engagements in enterprise storage solutions,
                         infrastructure optimization, and system integration.
@@ -392,10 +392,10 @@ const Contact = () => {
                       </p>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-secondary mb-3">
+                      <h4 className="text-lg font-semibold text-theme-secondary-light dark:text-theme-secondary-dark mb-3">
                         Enterprise Storage Solutions
                       </h4>
-                      <p className="text-textSecondary leading-relaxed">
+                      <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark leading-relaxed">
                         Providing comprehensive consultation and administration
                         services for enterprise storage solutions. Expertise
                         includes storage architecture design, implementation of
@@ -408,10 +408,10 @@ const Contact = () => {
                   </div>
                   <div className="space-y-6">
                     <div>
-                      <h4 className="text-lg font-semibold text-secondary mb-3">
+                      <h4 className="text-lg font-semibold text-theme-secondary-light dark:text-theme-secondary-dark mb-3">
                         Career Opportunities
                       </h4>
-                      <p className="text-textSecondary leading-relaxed">
+                      <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark leading-relaxed">
                         Open to exciting opportunities with forward-thinking
                         organizations that offer challenging work in enterprise
                         storage, cloud infrastructure, or technical leadership
@@ -422,10 +422,10 @@ const Contact = () => {
                       </p>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-secondary mb-3">
+                      <h4 className="text-lg font-semibold text-theme-secondary-light dark:text-theme-secondary-dark mb-3">
                         Technical Mentoring
                       </h4>
-                      <p className="text-textSecondary leading-relaxed">
+                      <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark leading-relaxed">
                         Passionate about sharing knowledge and mentoring in
                         storage technologies and services. Offering structured
                         mentoring programs covering enterprise storage

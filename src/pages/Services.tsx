@@ -6,7 +6,11 @@ import {
   ComputerDesktopIcon,
   CircleStackIcon,
   WrenchScrewdriverIcon,
+  CheckCircleIcon,
+  ArrowLongRightIcon,
+  EnvelopeIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const technicalAreas = [
@@ -92,7 +96,7 @@ const Services = () => {
 
   return (
     <div className="pt-16">
-      <section className="py-20 bg-primary">
+      <section className="py-20 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -114,20 +118,26 @@ const Services = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-tertiary p-6 rounded-lg"
+                  className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <area.icon className="h-12 w-12 text-secondary mb-4" />
-                  <h3 className="text-xl font-bold text-textPrimary mb-3">
-                    {area.title}
-                  </h3>
-                  <p className="text-textSecondary mb-4">{area.description}</p>
+                  <div className="flex items-center mb-4">
+                    <div className="p-2 bg-theme-bg-tertiary-light dark:bg-theme-bg-tertiary-dark rounded-lg mr-4">
+                      <area.icon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark" />
+                    </div>
+                    <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark">
+                      {area.title}
+                    </h3>
+                  </div>
+                  <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mb-4">
+                    {area.description}
+                  </p>
                   <ul className="space-y-2">
                     {area.expertise.map((item) => (
                       <li
                         key={item}
-                        className="flex items-center text-textSecondary"
+                        className="flex items-start text-theme-text-secondary-light dark:text-theme-text-secondary-dark"
                       >
-                        <span className="w-2 h-2 bg-secondary rounded-full mr-2" />
+                        <CheckCircleIcon className="h-5 w-5 text-theme-secondary-light dark:text-theme-secondary-dark mr-2 mt-0.5" />
                         {item}
                       </li>
                     ))}
@@ -140,10 +150,10 @@ const Services = () => {
       </section>
 
       {/* Professional Development */}
-      <section className="py-20 bg-tertiary">
+      <section className="py-20 bg-theme-bg-tertiary-light dark:bg-theme-bg-tertiary-dark">
         <div className="container mx-auto px-4 text-center">
           <h2 className="heading mb-8">Continuous Learning</h2>
-          <p className="text-textSecondary mb-8 max-w-2xl mx-auto">
+          <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mb-8 max-w-2xl mx-auto">
             Actively pursuing knowledge in emerging storage technologies,
             automation frameworks, and cloud platforms to stay current with
             industry trends and best practices.

@@ -18,7 +18,9 @@ const About = () => {
   const primarySkills = [
     {
       category: "Storage & Infrastructure",
-      icon: <ServerIcon className="h-6 w-6 text-secondary mb-3" />,
+      icon: (
+        <ServerIcon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark mb-3" />
+      ),
       items: [
         "Enterprise Storage",
         "Infrastructure Design",
@@ -30,7 +32,9 @@ const About = () => {
     },
     {
       category: "Automation & Cloud",
-      icon: <CloudIcon className="h-6 w-6 text-secondary mb-3" />,
+      icon: (
+        <CloudIcon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark mb-3" />
+      ),
       items: [
         "Infrastructure Automation",
         "Ansible",
@@ -45,7 +49,9 @@ const About = () => {
   const secondarySkills = [
     {
       category: "Web Development",
-      icon: <CodeBracketIcon className="h-6 w-6 text-secondary mb-3" />,
+      icon: (
+        <CodeBracketIcon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark mb-3" />
+      ),
       items: [
         "React",
         "TypeScript",
@@ -57,7 +63,9 @@ const About = () => {
     },
     {
       category: "Mobile Development",
-      icon: <DevicePhoneMobileIcon className="h-6 w-6 text-secondary mb-3" />,
+      icon: (
+        <DevicePhoneMobileIcon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark mb-3" />
+      ),
       items: [
         "Android Development",
         "Kotlin",
@@ -72,7 +80,9 @@ const About = () => {
   const productExpertise = [
     {
       category: "Dell EMC Solutions",
-      icon: <ServerIcon className="h-6 w-6 text-secondary mb-3" />,
+      icon: (
+        <ServerIcon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark mb-3" />
+      ),
       items: [
         "Dell EMC VNX",
         "Dell EMC VNXe",
@@ -85,12 +95,16 @@ const About = () => {
     },
     {
       category: "HPE Solutions",
-      icon: <ServerIcon className="h-6 w-6 text-secondary mb-3" />,
+      icon: (
+        <ServerIcon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark mb-3" />
+      ),
       items: ["HPE 3PAR", "HPE Alletra", "HPE Nimble", "HPE OneView"],
     },
     {
       category: "Enterprise Storage",
-      icon: <CubeIcon className="h-6 w-6 text-secondary mb-3" />,
+      icon: (
+        <CubeIcon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark mb-3" />
+      ),
       items: [
         "Pure Storage",
         "Infinidat Storage",
@@ -101,7 +115,9 @@ const About = () => {
     },
     {
       category: "Virtualization & Infrastructure",
-      icon: <CloudIcon className="h-6 w-6 text-secondary mb-3" />,
+      icon: (
+        <CloudIcon className="h-6 w-6 text-theme-secondary-light dark:text-theme-secondary-dark mb-3" />
+      ),
       items: ["vSAN", "Linux", "VMware vSphere"],
     },
   ];
@@ -115,7 +131,7 @@ const About = () => {
   return (
     <div className="pt-12">
       {/* Personal Journey Section */}
-      <section className="mt-12 mb-6 bg-primary">
+      <section className="mt-12 mb-6 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial="initial"
@@ -123,25 +139,25 @@ const About = () => {
             variants={fadeInUp}
             className="text-center mb-12"
           >
-            <UserIcon className="h-8 w-8 text-secondary mx-auto mb-3 animate-bounce" />
-            <h2 className="heading text-3xl font-bold text-secondary">
+            <UserIcon className="h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark mx-auto mb-3 animate-bounce" />
+            <h2 className="heading text-3xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark">
               Personal Journey
             </h2>
-            <p className="text-textSecondary mt-4 max-w-4xl mx-auto">
+            <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mt-4 max-w-4xl mx-auto">
               A journey across India's diverse landscapes, from bustling tech
               hubs to serene towns, shaping both personal and professional
               growth.
             </p>
           </motion.div>
-          <div className="max-w-6xl mx-auto text-textSecondary space-y-6">
+          <div className="max-w-6xl mx-auto text-theme-text-secondary-light dark:text-theme-text-secondary-dark space-y-6">
             <motion.div
-              className="bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
+              className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
                         shadow-lg hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4">
                 Cultural Roots & Early Life
               </h3>
               <p className="leading-relaxed">
@@ -159,13 +175,13 @@ const About = () => {
             </motion.div>
 
             <motion.div
-              className="bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
+              className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
                         shadow-lg hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4">
                 Professional Journey & Current Life
               </h3>
               <p className="leading-relaxed">
@@ -185,13 +201,13 @@ const About = () => {
             </motion.div>
 
             <motion.div
-              className="bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
+              className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
                         shadow-lg hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4">
                 Family & Personal Values
               </h3>
               <p className="leading-relaxed">
@@ -212,7 +228,7 @@ const About = () => {
         </div>
       </section>
       {/* Professional Expertise Section */}
-      <section className="pt-6 bg-primary">
+      <section className="pt-6 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial="initial"
@@ -220,25 +236,25 @@ const About = () => {
             variants={fadeInUp}
             className="text-center mb-12"
           >
-            <BriefcaseIcon className="h-8 w-8 text-secondary mx-auto mb-3 animate-bounce" />
-            <h2 className="heading text-3xl font-bold text-secondary">
+            <BriefcaseIcon className="h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark mx-auto mb-3 animate-bounce" />
+            <h2 className="heading text-3xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark">
               Professional Expertise
             </h2>
-            <p className="text-textSecondary mt-4 max-w-4xl mx-auto">
+            <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mt-4 max-w-4xl mx-auto">
               A decade of excellence in enterprise storage solutions, system
               integration, and infrastructure automation, driving technological
               innovation and operational efficiency.
             </p>
           </motion.div>
-          <div className="max-w-6xl mx-auto text-textSecondary space-y-6">
+          <div className="max-w-6xl mx-auto text-theme-text-secondary-light dark:text-theme-text-secondary-dark space-y-6">
             <motion.div
-              className="bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
+              className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
                         shadow-lg hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4">
                 Storage Technology Leadership
               </h3>
               <p className="leading-relaxed mb-4">
@@ -248,28 +264,18 @@ const About = () => {
                 diverse industry verticals. My journey has been marked by
                 successful implementations of large-scale storage solutions,
                 where I've consistently delivered high-performance, scalable
-                architectures that drive business efficiency and innovation.
-              </p>
-              <p className="leading-relaxed">
-                Throughout my career, I've specialized in designing and
-                implementing robust storage solutions for enterprise
-                environments, focusing on high availability, data protection,
-                and optimal performance. My expertise spans across various
-                storage technologies, including SAN, NAS, Object Storage, and
-                Software-Defined Storage solutions, enabling me to architect
-                comprehensive storage strategies that align with modern business
-                requirements.
+                infrastructure that drives business growth.
               </p>
             </motion.div>
 
             <motion.div
-              className="bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
+              className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
                         shadow-lg hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4">
                 System Integration & Automation
               </h3>
               <p className="leading-relaxed mb-4">
@@ -294,13 +300,13 @@ const About = () => {
             </motion.div>
 
             <motion.div
-              className="bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
+              className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
                         shadow-lg hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
             >
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4">
                 Future-Forward Approach
               </h3>
               <p className="leading-relaxed mb-4">
@@ -327,7 +333,7 @@ const About = () => {
         </div>
       </section>
       {/* Technical Passion Section */}
-      <section className="pt-6 bg-primary">
+      <section className="pt-6 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial="initial"
@@ -335,25 +341,25 @@ const About = () => {
             variants={fadeInUp}
             className="text-center mb-12"
           >
-            <HeartIcon className="h-8 w-8 text-secondary mx-auto mb-3 animate-bounce" />
-            <h2 className="heading text-3xl font-bold text-secondary">
+            <HeartIcon className="h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark mx-auto mb-3 animate-bounce" />
+            <h2 className="heading text-3xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark">
               Technical Passion
             </h2>
-            <p className="text-textSecondary mt-4 max-w-4xl mx-auto">
+            <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mt-4 max-w-4xl mx-auto">
               Driven by an unwavering passion for technology, constantly
               exploring and innovating across multiple domains of software
               development and system architecture.
             </p>
           </motion.div>
-          <div className="max-w-6xl mx-auto text-textSecondary space-y-6">
+          <div className="max-w-6xl mx-auto text-theme-text-secondary-light dark:text-theme-text-secondary-dark space-y-6">
             <motion.div
-              className="bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
+              className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
                         shadow-lg hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4">
                 Mobile Development Journey
               </h3>
               <p className="leading-relaxed mb-4">
@@ -377,13 +383,13 @@ const About = () => {
             </motion.div>
 
             <motion.div
-              className="bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
+              className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
                         shadow-lg hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4">
                 Web Development Evolution
               </h3>
               <p className="leading-relaxed mb-4">
@@ -407,13 +413,13 @@ const About = () => {
             </motion.div>
 
             <motion.div
-              className="bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
+              className="bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
                         shadow-lg hover:shadow-2xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
             >
-              <h3 className="text-xl font-bold text-secondary mb-4">
+              <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4">
                 Innovation & Continuous Learning
               </h3>
               <p className="leading-relaxed mb-4">
@@ -439,7 +445,7 @@ const About = () => {
         </div>
       </section>
       {/* Primary Skills Section */}
-      <section className="py-12 bg-primary">
+      <section className="py-12 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial="initial"
@@ -447,11 +453,11 @@ const About = () => {
             variants={fadeInUp}
             className="text-center mb-12"
           >
-            <AcademicCapIcon className="h-8 w-8 text-secondary mx-auto mb-3 animate-bounce" />
-            <h2 className="heading text-3xl font-bold text-secondary">
+            <AcademicCapIcon className="h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark mx-auto mb-3 animate-bounce" />
+            <h2 className="heading text-3xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark">
               Primary Skills & Expertise
             </h2>
-            <p className="text-textSecondary mt-4 max-w-4xl mx-auto">
+            <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mt-4 max-w-4xl mx-auto">
               Specialized in enterprise storage solutions and infrastructure
               automation, bringing years of hands-on experience in designing and
               implementing robust systems.
@@ -464,35 +470,29 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="group bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
-                          shadow-lg hover:shadow-2xl hover:bg-tertiary/20 transition-all duration-300 
+                className="group bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
+                          shadow-lg hover:shadow-2xl hover:bg-theme-bg-secondary-light/20 dark:hover:bg-theme-bg-secondary-dark/20 transition-all duration-300 
                           transform hover:-translate-y-1"
               >
                 <div className="text-center mb-4">
-                  <div
-                    className="inline-block p-3 bg-secondary/10 rounded-lg 
-                                group-hover:bg-secondary/20 transition-colors duration-300"
-                  >
+                  <div className="inline-block p-3 bg-theme-secondary-light/10 dark:bg-theme-secondary-dark/10 rounded-lg">
                     {React.cloneElement(skillSet.icon, {
                       className:
-                        "h-8 w-8 text-secondary group-hover:scale-110 transition-transform duration-300",
+                        "h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark group-hover:scale-110 transition-transform duration-300",
                     })}
                   </div>
                 </div>
-                <h3
-                  className="text-xl font-bold text-secondary mb-4 text-center 
-                             group-hover:text-secondary/90 transition-colors duration-300"
-                >
+                <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4 text-center">
                   {skillSet.category}
                 </h3>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 justify-center">
                   {skillSet.items.map((skill) => (
                     <motion.span
                       key={skill}
                       whileHover={{ scale: 1.05 }}
-                      className="px-4 py-2 bg-primary/40 text-textSecondary rounded-lg text-sm 
-                               hover:bg-secondary hover:text-white transition-all duration-300 
-                               cursor-default shadow-sm"
+                      className="px-4 py-2 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark text-theme-text-secondary-light dark:text-theme-text-secondary-dark rounded-lg text-sm 
+                               hover:bg-theme-bg-secondary-light dark:hover:bg-theme-bg-secondary-dark transition-all duration-300 
+                               cursor-default shadow-sm border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10"
                     >
                       {skill}
                     </motion.span>
@@ -504,7 +504,7 @@ const About = () => {
         </div>
       </section>
       {/* Product Expertise Section */}
-      <section className="pt-6 bg-primary">
+      <section className="pt-6 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial="initial"
@@ -512,11 +512,11 @@ const About = () => {
             variants={fadeInUp}
             className="text-center mb-12"
           >
-            <ServerIcon className="h-8 w-8 text-secondary mx-auto mb-3 animate-bounce" />
-            <h2 className="heading text-3xl font-bold text-secondary">
+            <ServerIcon className="h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark mx-auto mb-3 animate-bounce" />
+            <h2 className="heading text-3xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark">
               Product Expertise
             </h2>
-            <p className="text-textSecondary mt-4 max-w-4xl mx-auto">
+            <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mt-4 max-w-4xl mx-auto">
               Comprehensive expertise across leading enterprise storage
               solutions, virtualization platforms, and infrastructure
               technologies, enabling robust and scalable implementations.
@@ -529,35 +529,29 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="group bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
-                          shadow-lg hover:shadow-2xl hover:bg-tertiary/20 transition-all duration-300 
+                className="group bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
+                          shadow-lg hover:shadow-2xl hover:bg-theme-bg-secondary-light/20 dark:hover:bg-theme-bg-secondary-dark/20 transition-all duration-300 
                           transform hover:-translate-y-1"
               >
                 <div className="text-center mb-4">
-                  <div
-                    className="inline-block p-3 bg-secondary/10 rounded-lg 
-                                group-hover:bg-secondary/20 transition-colors duration-300"
-                  >
+                  <div className="inline-block p-3 bg-theme-secondary-light/10 dark:bg-theme-secondary-dark/10 rounded-lg">
                     {React.cloneElement(productSet.icon, {
                       className:
-                        "h-8 w-8 text-secondary group-hover:scale-110 transition-transform duration-300",
+                        "h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark group-hover:scale-110 transition-transform duration-300",
                     })}
                   </div>
                 </div>
-                <h3
-                  className="text-xl font-bold text-secondary mb-4 text-center 
-                             group-hover:text-secondary/90 transition-colors duration-300"
-                >
+                <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4 text-center">
                   {productSet.category}
                 </h3>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 justify-center">
                   {productSet.items.map((product) => (
                     <motion.span
                       key={product}
                       whileHover={{ scale: 1.05 }}
-                      className="px-4 py-2 bg-primary/40 text-textSecondary rounded-lg text-sm 
-                               hover:bg-secondary hover:text-white transition-all duration-300 
-                               cursor-default shadow-sm"
+                      className="px-4 py-2 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark text-theme-text-secondary-light dark:text-theme-text-secondary-dark rounded-lg text-sm 
+                               hover:bg-theme-bg-secondary-light dark:hover:bg-theme-bg-secondary-dark transition-all duration-300 
+                               cursor-default shadow-sm border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10"
                     >
                       {product}
                     </motion.span>
@@ -570,7 +564,7 @@ const About = () => {
       </section>
 
       {/* Secondary Skills Section */}
-      <section className="py-12 bg-primary">
+      <section className="py-12 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial="initial"
@@ -578,11 +572,11 @@ const About = () => {
             variants={fadeInUp}
             className="text-center mb-12"
           >
-            <CodeBracketIcon className="h-8 w-8 text-secondary mx-auto mb-3 animate-bounce" />
-            <h2 className="heading text-3xl font-bold text-secondary">
+            <CodeBracketIcon className="h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark mx-auto mb-3 animate-bounce" />
+            <h2 className="heading text-3xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark">
               Development Skills
             </h2>
-            <p className="text-textSecondary mt-4 max-w-4xl mx-auto">
+            <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mt-4 max-w-4xl mx-auto">
               Passionate about creating innovative software solutions, from
               mobile applications to full-stack web development, using modern
               technologies and best practices.
@@ -595,35 +589,29 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="group bg-tertiary/10 backdrop-blur-sm p-6 rounded-xl border border-secondary/10 
-                          shadow-lg hover:shadow-2xl hover:bg-tertiary/20 transition-all duration-300 
+                className="group bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark backdrop-blur-sm p-6 rounded-xl border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 
+                          shadow-lg hover:shadow-2xl hover:bg-theme-bg-secondary-light/20 dark:hover:bg-theme-bg-secondary-dark/20 transition-all duration-300 
                           transform hover:-translate-y-1"
               >
                 <div className="text-center mb-4">
-                  <div
-                    className="inline-block p-3 bg-secondary/10 rounded-lg 
-                                group-hover:bg-secondary/20 transition-colors duration-300"
-                  >
+                  <div className="inline-block p-3 bg-theme-secondary-light/10 dark:bg-theme-secondary-dark/10 rounded-lg">
                     {React.cloneElement(skillSet.icon, {
                       className:
-                        "h-8 w-8 text-secondary group-hover:scale-110 transition-transform duration-300",
+                        "h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark group-hover:scale-110 transition-transform duration-300",
                     })}
                   </div>
                 </div>
-                <h3
-                  className="text-xl font-bold text-secondary mb-4 text-center 
-                             group-hover:text-secondary/90 transition-colors duration-300"
-                >
+                <h3 className="text-xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4 text-center">
                   {skillSet.category}
                 </h3>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 justify-center">
                   {skillSet.items.map((skill) => (
                     <motion.span
                       key={skill}
                       whileHover={{ scale: 1.05 }}
-                      className="px-4 py-2 bg-primary/40 text-textSecondary rounded-lg text-sm 
-                               hover:bg-secondary hover:text-white transition-all duration-300 
-                               cursor-default shadow-sm"
+                      className="px-4 py-2 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark text-theme-text-secondary-light dark:text-theme-text-secondary-dark rounded-lg text-sm 
+                               hover:bg-theme-bg-secondary-light dark:hover:bg-theme-bg-secondary-dark transition-all duration-300 
+                               cursor-default shadow-sm border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10"
                     >
                       {skill}
                     </motion.span>
@@ -635,7 +623,7 @@ const About = () => {
         </div>
       </section>
       {/* Professional Values Section */}
-      <section className="py-12 bg-primary">
+      <section className="py-12 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark">
         <div className="container mx-auto px-4">
           <motion.div
             initial="initial"
@@ -643,22 +631,34 @@ const About = () => {
             variants={fadeInUp}
             className="text-center mb-8"
           >
-            <RocketLaunchIcon className="h-8 w-8 text-secondary mx-auto mb-3" />
-            <h2 className="heading">Professional Values</h2>
+            <RocketLaunchIcon className="h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark mx-auto mb-3 animate-bounce" />
+            <h2 className="heading text-3xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-4">
+              Professional Values
+            </h2>
+            <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark mt-4 max-w-4xl mx-auto">
+              Committed to excellence, innovation, and continuous growth in
+              every professional endeavor.
+            </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-primary p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center"
+              className="group bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 
+                        border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 hover:bg-theme-bg-secondary-light/20 dark:hover:bg-theme-bg-secondary-dark/20 
+                        transform hover:-translate-y-1"
             >
-              <AcademicCapIcon className="h-6 w-6 text-secondary mx-auto mb-3" />
-              <h3 className="text-lg font-bold text-secondary mb-3">
+              <div className="text-center mb-4">
+                <div className="inline-block p-3 bg-theme-secondary-light/10 dark:bg-theme-secondary-dark/10 rounded-lg">
+                  <AcademicCapIcon className="h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark group-hover:scale-110 transition-transform duration-300" />
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-3 text-center">
                 Technical Excellence
               </h3>
-              <p className="text-textSecondary text-sm">
-                I am committed to delivering high-performance solutions with
+              <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark text-sm text-center">
+                Committed to delivering high-performance solutions with
                 meticulous attention to detail and industry best practices.
               </p>
             </motion.div>
@@ -666,14 +666,20 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-primary p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center"
+              className="group bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 
+                        border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 hover:bg-theme-bg-secondary-light/20 dark:hover:bg-theme-bg-secondary-dark/20 
+                        transform hover:-translate-y-1"
             >
-              <RocketLaunchIcon className="h-6 w-6 text-secondary mx-auto mb-3" />
-              <h3 className="text-lg font-bold text-secondary mb-3">
+              <div className="text-center mb-4">
+                <div className="inline-block p-3 bg-theme-secondary-light/10 dark:bg-theme-secondary-dark/10 rounded-lg">
+                  <RocketLaunchIcon className="h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark group-hover:scale-110 transition-transform duration-300" />
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-3 text-center">
                 Innovation & Automation
               </h3>
-              <p className="text-textSecondary text-sm">
-                I focus on creating innovative automation solutions that enhance
+              <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark text-sm text-center">
+                Focus on creating innovative automation solutions that enhance
                 efficiency and reduce operational complexity.
               </p>
             </motion.div>
@@ -681,14 +687,20 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-primary p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center"
+              className="group bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 
+                        border border-theme-secondary-light/10 dark:border-theme-secondary-dark/10 hover:bg-theme-bg-secondary-light/20 dark:hover:bg-theme-bg-secondary-dark/20 
+                        transform hover:-translate-y-1"
             >
-              <ArrowPathIcon className="h-6 w-6 text-secondary mx-auto mb-3" />
-              <h3 className="text-lg font-bold text-secondary mb-3">
+              <div className="text-center mb-4">
+                <div className="inline-block p-3 bg-theme-secondary-light/10 dark:bg-theme-secondary-dark/10 rounded-lg">
+                  <ArrowPathIcon className="h-8 w-8 text-theme-secondary-light dark:text-theme-secondary-dark group-hover:scale-110 transition-transform duration-300" />
+                </div>
+              </div>
+              <h3 className="text-lg font-bold text-theme-secondary-light dark:text-theme-secondary-dark mb-3 text-center">
                 Continuous Growth
               </h3>
-              <p className="text-textSecondary text-sm">
-                I embrace continuous learning and adapt to emerging technologies
+              <p className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark text-sm text-center">
+                Embrace continuous learning and adapt to emerging technologies
                 to deliver cutting-edge solutions.
               </p>
             </motion.div>

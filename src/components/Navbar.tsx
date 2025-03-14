@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { logger } from "../utils/logger";
+import { useTheme } from "../utils/ThemeContext";
+import ThemeToggle from "./ThemeToggle";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,12 +60,12 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-primary fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "shadow-lg" : ""
+      className={`fixed w-full z-50 bg-theme-bg-primary-light dark:bg-theme-bg-primary-dark transition-all duration-300 ${
+        isScrolled ? "shadow-lg py-2" : "py-4"
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <img
@@ -71,37 +74,40 @@ const Navbar = () => {
                 className="w-8 h-8 object-contain"
                 onError={(e) => {
                   logger.error("Failed to load logo image");
-                  e.currentTarget.src = "/fallback-logo.png"; // Provide a fallback
+                  e.currentTarget.src = "/fallback-logo.png";
                 }}
               />
-              <span className="text-2xl font-bold text-secondary">
+              <span className="text-2xl font-bold text-theme-secondary-light dark:text-theme-secondary-dark">
                 Mackdev Inc.
               </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors duration-300 ${
+                className={
                   location.pathname === item.path
-                    ? "text-secondary"
-                    : "text-textSecondary hover:text-secondary"
-                }`}
+                    ? "nav-link-active"
+                    : "nav-link"
+                }
               >
                 {item.name}
               </Link>
             ))}
+            <div className="ml-4">
+              <ThemeToggle />
+            </div>
           </div>
 
-          {/* Mobile Navigation Button */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={handleMobileMenuClick}
-              className="text-textSecondary hover:text-secondary focus:outline-none"
+              className="nav-link"
               aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? (
@@ -113,27 +119,38 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    location.pathname === item.path
-                      ? "text-secondary bg-tertiary"
-                      : "text-textSecondary hover:text-secondary hover:bg-tertiary"
-                  }`}
-                  onClick={handleMobileMenuClick}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden mt-4"
+            >
+              <div className="flex flex-col space-y-4 pb-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`text-theme-text-primary-light dark:text-theme-text-primary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transition-colors duration-300 ${
+                      location.pathname === item.path
+                        ? "text-theme-secondary-light dark:text-theme-secondary-dark font-semibold"
+                        : ""
+                    }`}
+                    onClick={handleMobileMenuClick}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <div className="pt-2">
+                  <ThemeToggle />
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
