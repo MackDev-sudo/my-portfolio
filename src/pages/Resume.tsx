@@ -117,12 +117,12 @@ const Resume = () => {
             <div className="flex justify-between items-center mb-12">
               <h1 className="heading">Resume</h1>
               <a
-                href="/resume.pdf"
+                href="/projects/Atanu-Resume-Latest.pdf"
                 download
                 className="bg-theme-secondary-light dark:bg-theme-secondary-dark text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors duration-300 flex items-center space-x-2"
               >
                 <ArrowDownTrayIcon className="h-5 w-5" />
-                <span>Download PDF</span>
+                <span>Download Resume</span>
               </a>
             </div>
 

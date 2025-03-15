@@ -11,6 +11,7 @@ import {
   DataSnapshot,
 } from "firebase/database";
 import { logger } from "../utils/logger";
+import NoteDialog from "./NoteDialog";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -107,6 +108,7 @@ const Footer = () => {
     today: 0,
   });
   const [error, setError] = useState<string | null>(null);
+  const [isNoteOpen, setIsNoteOpen] = useState(false);
 
   useEffect(() => {
     logger.debug("Setting up Firebase listeners...");
@@ -346,6 +348,12 @@ const Footer = () => {
                 >
                   Cookie Policy
                 </Link>
+                <button
+                  onClick={() => setIsNoteOpen(true)}
+                  className="text-xs text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transition-colors duration-300"
+                >
+                  Note
+                </button>
               </div>
             </div>
             {/* Disclaimer */}
@@ -364,6 +372,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Note Dialog */}
+      <NoteDialog isOpen={isNoteOpen} onClose={() => setIsNoteOpen(false)} />
     </footer>
   );
 };

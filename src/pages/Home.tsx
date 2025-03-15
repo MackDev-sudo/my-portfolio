@@ -55,7 +55,7 @@ const Home = () => {
               <p className="text-xl text-theme-text-secondary-light dark:text-theme-text-secondary-dark mb-4">
                 Storage Technologist by profession
               </p>
-              <p className="text-lg text-theme-text-secondary-light dark:text-theme-text-secondary-dark mb-8">
+              <p className="text-sm text-theme-text-secondary-light dark:text-theme-text-secondary-dark mb-8">
                 Web Designer, Programmer, and Artist by passion. With expertise
                 in enterprise storage solutions and a love for creating
                 innovative web and mobile applications.
