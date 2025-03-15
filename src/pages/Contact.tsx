@@ -26,10 +26,7 @@ const Contact = () => {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      const apiUrl =
-        process.env.NODE_ENV === "production"
-          ? "https://my-portfolio-eight-rho-14.vercel.app/api/contact"
-          : "/api/contact";
+      const apiUrl = "https://my-portfolio-eight-rho-14.vercel.app/api/contact";
 
       const response = await fetch(apiUrl, {
         method: "POST",

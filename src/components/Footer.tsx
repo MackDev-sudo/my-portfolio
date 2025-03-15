@@ -15,14 +15,14 @@ import NoteDialog from "./NoteDialog";
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAmdnKGsQ2lLVjR2iqyD5-a0A_0TJlvgEg",
-  authDomain: "portfolio-atanu.firebaseapp.com",
-  projectId: "portfolio-atanu",
-  databaseURL: "https://portfolio-atanu-default-rtdb.firebaseio.com",
-  storageBucket: "portfolio-atanu.firebasestorage.app",
-  messagingSenderId: "546153583966",
-  appId: "1:546153583966:web:6bce44bd4478a553f2abcf",
-  measurementId: "G-W58CZ0W0KL",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 let app;
@@ -100,6 +100,20 @@ const services: string[] = [
   "Cloud Solutions",
   "Web & Mobile Development",
   "UI/UX Design",
+];
+
+// Add donation links array back
+const donationLinks = [
+  {
+    name: "PayPal",
+    url: "https://paypal.me/mackdev1990",
+    icon: "/payment/paypal_icon.svg",
+  },
+  {
+    name: "PayTM",
+    url: "https://paytm.me/mackdev-coffee",
+    icon: "/payment/paytm_icon.svg",
+  },
 ];
 
 const Footer = () => {
@@ -201,64 +215,102 @@ const Footer = () => {
             <p className="text-sm text-theme-text-secondary-light dark:text-theme-text-secondary-dark mb-3">
               {siteConfig.description}
             </p>
-            <div className="flex items-center space-x-3">
-              {socialLinks.map((link) => (
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transition-colors duration-300"
+                    aria-label={link.name}
+                  >
+                    <link.icon className="h-4 w-4" />
+                  </a>
+                ))}
+                {error ? (
+                  <span className="text-red-500 text-xs">Error</span>
+                ) : (
+                  <div className="flex items-center space-x-2 bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark rounded-full px-3 py-1 border border-theme-text-secondary-light/10 dark:border-theme-text-secondary-dark/10 shadow-sm">
+                    <div className="flex items-center" title="Today's visitors">
+                      <svg
+                        className="w-3 h-3 mr-1 text-theme-secondary-light dark:text-theme-secondary-dark"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span className="text-xs font-medium text-theme-text-primary-light dark:text-theme-text-primary-dark">
+                        Today: {visitorStats.today}
+                      </span>
+                    </div>
+                    <span className="text-xs text-theme-text-secondary-light dark:text-theme-text-secondary-dark">
+                      |
+                    </span>
+                    <div className="flex items-center" title="Total visitors">
+                      <svg
+                        className="w-3 h-3 mr-1 text-theme-secondary-light dark:text-theme-secondary-dark"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
+                      </svg>
+                      <span className="text-xs font-medium text-theme-text-primary-light dark:text-theme-text-primary-dark">
+                        Total: {visitorStats.total}
+                      </span>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="flex items-center space-x-1">
+                <span className="text-xs font-medium text-theme-text-secondary-light dark:text-theme-text-secondary-dark">
+                  Powered by{" "}
+                </span>
                 <a
-                  key={link.name}
-                  href={link.url}
+                  href="https://www.cursor.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transition-colors duration-300"
-                  aria-label={link.name}
+                  className="text-sm font-mono text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-300 inline-flex items-center"
                 >
-                  <link.icon className="h-4 w-4" />
+                  <svg
+                    className="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M3 3v18h18V3H3zm16 16H5V5h14v14z" />
+                    <path d="M15 7l-3 3-3-3h6zM7 15l3-3 3 3H7z" />
+                    <rect x="11" y="7" width="2" height="10" />
+                  </svg>
+                  Cursor.ai
                 </a>
-              ))}
-              {error ? (
-                <span className="text-red-500 text-xs">Error</span>
-              ) : (
-                <div className="flex items-center space-x-2 bg-theme-bg-secondary-light dark:bg-theme-bg-secondary-dark rounded-full px-3 py-1 border border-theme-text-secondary-light/10 dark:border-theme-text-secondary-dark/10 shadow-sm">
-                  <div className="flex items-center" title="Today's visitors">
-                    <svg
-                      className="w-3 h-3 mr-1 text-theme-secondary-light dark:text-theme-secondary-dark"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span className="text-xs font-medium text-theme-text-primary-light dark:text-theme-text-primary-dark">
-                      Today: {visitorStats.today}
-                    </span>
-                  </div>
-                  <span className="text-xs text-theme-text-secondary-light dark:text-theme-text-secondary-dark">
-                    ||
-                  </span>
-                  <div className="flex items-center" title="Total visitors">
-                    <svg
-                      className="w-3 h-3 mr-1 text-theme-secondary-light dark:text-theme-secondary-dark"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    </svg>
-                    <span className="text-xs font-medium text-theme-text-primary-light dark:text-theme-text-primary-dark">
-                      Total: {visitorStats.total}
-                    </span>
-                  </div>
-                </div>
-              )}
+                <span className="text-xs font-medium text-theme-text-secondary-light dark:text-theme-text-secondary-dark">
+                  {" "}
+                  hosted on{" "}
+                </span>
+                <a
+                  href="https://vercel.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors duration-300 inline-flex items-center"
+                >
+                  <svg className="h-3" viewBox="0 0 283 64" fill="currentColor">
+                    <path d="M141.04 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM248.72 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM200.24 34c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9V5h9zM36.95 0L73.9 64H0L36.95 0zm92.38 5l-27.71 48L73.91 5H84.3l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10V51h-9V17h9v9.2c0-5.08 5.91-9.2 13.2-9.2z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -317,11 +369,36 @@ const Footer = () => {
                 {siteConfig.location}
               </li>
             </ul>
+
+            {/* Buy me a coffee box */}
+            <div className="mt-1 bg-theme-bg-secondary-light dark:bg-yellow-500 rounded-lg border border-theme-text-secondary-light/10 dark:border-theme-text-secondary-dark/10 shadow-sm">
+              <div className="flex items-center justify-center space-x-6">
+                {donationLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transition-colors duration-300"
+                    title={`Support via ${link.name}`}
+                  >
+                    <img
+                      src={link.icon}
+                      alt={link.name}
+                      className="h-14 w-14 object-contain"
+                    />
+                  </a>
+                ))}
+              </div>
+              <p className="mb-2 text-xs font-medium text-center text-theme-text-primary-light dark:text-theme-text-primary-dark">
+                Your support is valuable to me.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-6 pt-4 border-t border-theme-bg-secondary-light dark:border-theme-bg-secondary-dark">
+        <div className="mt-2 pt-2 border-t border-theme-bg-secondary-light dark:border-theme-bg-secondary-dark">
           <div className="flex flex-col space-y-3">
             {/* Copyright and Links */}
             <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
@@ -352,7 +429,7 @@ const Footer = () => {
                   onClick={() => setIsNoteOpen(true)}
                   className="text-xs text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transition-colors duration-300"
                 >
-                  Note
+                  Notice
                 </button>
               </div>
             </div>
