@@ -26,16 +26,18 @@ const Contact = () => {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      const response = await fetch(
-        "https://my-portfolio-eight-rho-14.vercel.app/api/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const apiUrl =
+        process.env.NODE_ENV === "production"
+          ? "https://my-portfolio-eight-rho-14.vercel.app/api/contact"
+          : "/api/contact";
+
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       const data = await response.json();
 

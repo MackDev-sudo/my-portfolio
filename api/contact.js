@@ -1,5 +1,4 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { createTransport } from "nodemailer";
+const { createTransport } = require("nodemailer");
 
 // Create transporter only when needed to avoid initialization errors
 const createTransporter = () => {
@@ -16,7 +15,7 @@ const createTransporter = () => {
   });
 };
 
-const handler = async (req: VercelRequest, res: VercelResponse) => {
+module.exports = async function handler(req, res) {
   try {
     // Enable CORS
     res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -92,7 +91,6 @@ const handler = async (req: VercelRequest, res: VercelResponse) => {
       },
     });
 
-    // Ensure we always return a proper JSON response
     return res.status(500).json({
       success: false,
       error: "Failed to send email",
@@ -101,5 +99,3 @@ const handler = async (req: VercelRequest, res: VercelResponse) => {
     });
   }
 };
-
-export default handler;
