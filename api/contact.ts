@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import nodemailer from "nodemailer";
+import { createTransport } from "nodemailer";
 
 // Create transporter only when needed to avoid initialization errors
 const createTransporter = () => {
@@ -7,7 +7,7 @@ const createTransporter = () => {
     throw new Error("Email credentials are not configured");
   }
 
-  return nodemailer.createTransport({
+  return createTransport({
     service: "gmail",
     auth: {
       user: process.env.EMAIL_USER,
@@ -16,7 +16,7 @@ const createTransporter = () => {
   });
 };
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+const handler = async (req: VercelRequest, res: VercelResponse) => {
   try {
     // Enable CORS
     res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -100,4 +100,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         error instanceof Error ? error.message : "An unexpected error occurred",
     });
   }
-}
+};
+
+export default handler;
