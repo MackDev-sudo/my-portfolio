@@ -329,13 +329,13 @@ const Footer = () => {
               </p>
               <div className="flex space-x-4">
                 <Link
-                  to="/privacy-policy"
+                  to="/privacy"
                   className="text-xs text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transition-colors duration-300"
                 >
                   Privacy Policy
                 </Link>
                 <Link
-                  to="/terms-and-conditions"
+                  to="/terms"
                   className="text-xs text-theme-text-secondary-light dark:text-theme-text-secondary-dark hover:text-theme-secondary-light dark:hover:text-theme-secondary-dark transition-colors duration-300"
                 >
                   Terms & Conditions

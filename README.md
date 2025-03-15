@@ -1,3 +1,5 @@
+## DEPLOYED IN VERCEL : https://my-portfolio-eight-rho-14.vercel.app/
+
 # Atanu Kumar Paul - Portfolio
 
 A modern, responsive portfolio website showcasing my professional journey and technical expertise. Built with React, TypeScript, and Tailwind CSS.
