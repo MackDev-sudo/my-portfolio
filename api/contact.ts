@@ -1,41 +1,51 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+// Create transporter only when needed to avoid initialization errors
+const createTransporter = () => {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    throw new Error("Email credentials are not configured");
+  }
+
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+};
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  // Enable CORS
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-  );
-
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
-  }
-
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
   try {
+    // Enable CORS
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+    );
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+    );
+
+    if (req.method === "OPTIONS") {
+      return res.status(200).json({ status: "ok" });
+    }
+
+    if (req.method !== "POST") {
+      return res.status(405).json({ error: "Method not allowed" });
+    }
+
     const { name, email, subject, message } = req.body;
 
     if (!name || !email || !subject || !message) {
       return res.status(400).json({ error: "All fields are required" });
     }
+
+    // Create transporter instance
+    const transporter = createTransporter();
 
     // Verify transporter
     await transporter.verify();
@@ -68,7 +78,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `,
     });
 
-    return res.status(200).json({ message: "Emails sent successfully" });
+    return res.status(200).json({
+      success: true,
+      message: "Emails sent successfully",
+    });
   } catch (error) {
     console.error("Error in contact API:", {
       error: error instanceof Error ? error.message : "Unknown error",
@@ -79,9 +92,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       },
     });
 
+    // Ensure we always return a proper JSON response
     return res.status(500).json({
+      success: false,
       error: "Failed to send email",
-      details: error instanceof Error ? error.message : "Unknown error",
+      message:
+        error instanceof Error ? error.message : "An unexpected error occurred",
     });
   }
 }
