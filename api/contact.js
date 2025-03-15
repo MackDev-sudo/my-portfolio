@@ -1,4 +1,4 @@
-const { createTransport } = require("nodemailer");
+import nodemailer from "nodemailer";
 
 // Create transporter only when needed to avoid initialization errors
 const createTransporter = () => {
@@ -6,7 +6,7 @@ const createTransporter = () => {
     throw new Error("Email credentials are not configured");
   }
 
-  return createTransport({
+  return nodemailer.createTransport({
     service: "gmail",
     auth: {
       user: process.env.EMAIL_USER,
@@ -15,7 +15,7 @@ const createTransporter = () => {
   });
 };
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   try {
     // Enable CORS
     res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -98,4 +98,4 @@ module.exports = async function handler(req, res) {
         error instanceof Error ? error.message : "An unexpected error occurred",
     });
   }
-};
+}
